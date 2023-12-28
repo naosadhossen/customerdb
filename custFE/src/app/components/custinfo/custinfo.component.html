@@ -1,3 +1,20 @@
-<p>
-  custinfo works!
-</p>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="row">ID</th>
+      <th scope="row">Name</th>
+      <th scope="row">Email</th>
+      <th scope="row">Phone</th>
+      <!-- Add more table headers for other customer details if needed -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers">
+      <td>{{ customer._id }}</td>
+      <td>{{ customer.name }}</td>
+      <td>{{ customer.email }}</td>
+      <td>{{ customer.phone }}</td>
+      <!-- Display other customer details within additional table cells -->
+    </tr>
+  </tbody>
+</table>

@@ -87,7 +87,7 @@ customerrouter.post('/getcustomerbycountry',passport.authenticate('jwt', {sessio
 //Get All Customer Info
 customerrouter.get('/getallcustomers', passport.authenticate('jwt', {session:false}), (req, res, next) => {
     Customer.getAllCustomer((err,allCustomers)=>{
-    // console.log(allCustomers);
+    console.log(allCustomers);
     res.send(allCustomers);
   });
   

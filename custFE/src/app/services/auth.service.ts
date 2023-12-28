@@ -8,6 +8,7 @@ import { tokenNotExpired } from 'angular2-jwt';
 export class AuthService {
   authToken: any;
   user: any;
+  customer: any;
 
   constructor(private http: Http) {
      // this.isDev = true;  // Change to false before deployment
@@ -20,10 +21,18 @@ export class AuthService {
       .map(res => res.json());
   }
 
+  addCustomer(customer) {
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('customers/addcustomer', customer, {headers: headers})
+      .map(res => res.json());
+  }
   authenticateUser(user) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('users/authenticate', user, {headers: headers})
+    return this.http.post('http://localhost:8080/users/authenticate', user, {headers: headers})
       .map(res => res.json());
   }
 
@@ -36,6 +45,15 @@ export class AuthService {
       .map(res => res.json());
   }
 
+
+  getCustomer() {
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    headers.append('Content-Type', 'application/json');
+    console.log(this.http.get('http://localhost:8080/customers/getallcustomers', {headers: headers}));
+    return this.http.get('http://localhost:8080/customers/getallcustomers', {headers: headers}).map(res => res.json());
+  }
   storeUserData(token, user) {
     localStorage.setItem('id_token', token);
     localStorage.setItem('user', JSON.stringify(user));

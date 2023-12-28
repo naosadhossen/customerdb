@@ -9,10 +9,10 @@
           <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
             <a class="nav-link" [routerLink]="['/']">Home <span></span></a>
           </li>
-          <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
+          <li class="nav-item" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
             <a class="nav-link" [routerLink]="['/custinfo']">Customers <span></span></a>
           </li>
-          <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
+          <li class="nav-item" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
             <a class="nav-link" [routerLink]="['/addcust']">Add a Customer <span></span></a>
           </li>
         </ul>

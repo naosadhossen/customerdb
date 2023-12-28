@@ -21,8 +21,8 @@ import { AddcustComponent } from './components/addcust/addcust.component';
 
 const appRoutes: Routes =  [
   {path:'', component: HomeComponent},
-  {path:'custinfo', component: CustinfoComponent},
-  {path:'addcust', component: AddcustComponent},
+  {path:'custinfo', component: CustinfoComponent, canActivate:[AuthGuard]},
+  {path:'addcust', component: AddcustComponent, canActivate:[AuthGuard]},
   {path:'register', component: RegisterComponent},
   {path:'login', component: LoginComponent},
   {path:'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},

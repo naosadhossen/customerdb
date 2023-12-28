@@ -164,8 +164,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var appRoutes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */] },
-    { path: 'custinfo', component: __WEBPACK_IMPORTED_MODULE_16__components_custinfo_custinfo_component__["a" /* CustinfoComponent */] },
-    { path: 'addcust', component: __WEBPACK_IMPORTED_MODULE_17__components_addcust_addcust_component__["a" /* AddcustComponent */] },
+    { path: 'custinfo', component: __WEBPACK_IMPORTED_MODULE_16__components_custinfo_custinfo_component__["a" /* CustinfoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'addcust', component: __WEBPACK_IMPORTED_MODULE_17__components_addcust_addcust_component__["a" /* AddcustComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]] },
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_8__components_register_register_component__["a" /* RegisterComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_7__components_login_login_component__["a" /* LoginComponent */] },
     { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]] },

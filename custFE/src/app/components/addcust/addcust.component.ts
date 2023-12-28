@@ -33,6 +33,12 @@ export class AddcustComponent implements OnInit {
       phone: this.phone,
       country: this.country
     }
+
+  // Required Fields
+     if(!this.validateService.validateCustomerForm(customer)) {
+      this.flashMessage.show('Please fill in all fields', {cssClass: 'alert-danger', timeout: 3000});
+      return false;
+    }   
   //Add customer
   this.authService.addCustomer(customer).subscribe(result=>{
     if(result.success) {

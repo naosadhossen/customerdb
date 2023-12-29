@@ -147,7 +147,6 @@ var AuthService = (function () {
         this.loadToken();
         headers.append('Authorization', this.authToken);
         headers.append('Content-Type', 'application/json');
-        console.log(this.http.get('http://localhost:8080/customers/getallcustomers', { headers: headers }));
         return this.http.get('http://localhost:8080/customers/getallcustomers', { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.storeUserData = function (token, user) {

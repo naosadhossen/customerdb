@@ -51,7 +51,6 @@ export class AuthService {
     this.loadToken();
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
-    console.log(this.http.get('http://localhost:8080/customers/getallcustomers', {headers: headers}));
     return this.http.get('http://localhost:8080/customers/getallcustomers', {headers: headers}).map(res => res.json());
   }
   storeUserData(token, user) {

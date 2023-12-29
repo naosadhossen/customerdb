@@ -14,7 +14,7 @@ customerrouter.get('/customer',(req, res, next)=>{
     res.send("It is coming from Customer Route")
   });
 
-// Register a Customer
+// Add a Customer
 customerrouter.post('/addcustomer', passport.authenticate('jwt', {session:false}),(req, res, next) => {
   let newCustomer = new Customer ({
     name: req.body.name,
